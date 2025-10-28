@@ -1,43 +1,145 @@
-# Mintlify Starter Kit
+# Basemarket Documentation
 
-Use the starter kit to get your docs deployed and ready to customize.
+Official documentation for [Basemarket](https://basemarket.com), a peer-to-peer prediction market powered by Base.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+**Live Documentation:** [docs.basemarket.com](https://docs.basemarket.com)
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+## About
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+This repository contains the complete documentation for Basemarket, covering:
 
-## Development
+- **Users Guide**: Trading, deposits, withdrawals, market types, and more
+- **Developer Guide**: API reference and integration guides
+- **FAQ**: Common questions about the platform
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+Built with [Mintlify](https://mintlify.com), our docs are written in MDX and configured through `docs.json`.
+
+## Repository Structure
 
 ```
+├── users/              # User-facing documentation
+│   ├── signing-up.mdx
+│   ├── trading.mdx
+│   ├── market-types.mdx
+│   └── ...
+├── developers/         # Developer documentation
+│   └── quickstart.mdx
+├── images/            # Screenshots and assets
+├── logo/              # Brand assets
+├── docs.json          # Mintlify configuration
+├── favicon.svg
+└── index.mdx          # Documentation homepage
+```
+
+## Local Development
+
+### Prerequisites
+
+- Node.js 18+
+- npm or pnpm
+
+### Setup
+
+1. Install the Mintlify CLI globally:
+
+```bash
 npm i -g mint
 ```
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
+2. Clone this repository:
 
+```bash
+git clone https://github.com/basemarket/basemarket-docs.git
+cd basemarket-docs
 ```
+
+3. Start the development server:
+
+```bash
 mint dev
 ```
 
-View your local preview at `http://localhost:3000`.
-
-## Publishing changes
-
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-## Need help?
+4. Open your browser to `http://localhost:3000`
 
 ### Troubleshooting
 
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
+- **Dev environment not running**: Run `mint update` to ensure you have the latest CLI version
+- **Page loads as 404**: Verify you're in a folder with a valid `docs.json` file
 
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+## Contributing
+
+We welcome contributions to improve our documentation!
+
+### Writing Guidelines
+
+- Write in second person ("you")
+- Keep content concise and scannable
+- Include code examples where relevant
+- Test all code snippets before submitting
+- Use relative paths for internal links
+- Add alt text to all images
+
+### MDX Frontmatter
+
+Every `.mdx` file requires frontmatter:
+
+```mdx
+---
+title: Page Title
+description: Brief description for SEO and navigation
+---
+```
+
+### Making Changes
+
+1. Create a new branch for your changes
+2. Make your edits to the relevant `.mdx` files
+3. Test locally with `mint dev`
+4. Commit with clear, descriptive messages
+5. Submit a pull request
+
+### Navigation
+
+To add or modify navigation, edit `docs.json`. The structure follows this pattern:
+
+```json
+{
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Tab Name",
+        "groups": [
+          {
+            "group": "Group Name",
+            "pages": ["path/to/page"]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+## Publishing
+
+Changes merged to the `main` branch are automatically deployed to production via our [Mintlify GitHub app](https://dashboard.mintlify.com/settings/organization/github-app).
+
+## Resources
+
+- [Mintlify Documentation](https://mintlify.com/docs)
+- [Mintlify Components](https://mintlify.com/docs/content/components)
+- [Basemarket Website](https://basemarket.com)
+- [Basemarket on X](https://x.com/PredictOnBase)
+
+## Support
+
+For questions about Basemarket itself, reach out:
+
+- Twitter: [@PredictOnBase](https://x.com/PredictOnBase)
+- Website: [basemarket.com](https://basemarket.com)
+
+For documentation issues, please open an issue in this repository.
+
+## License
+
+See [LICENSE](LICENSE) for details.
