@@ -1,97 +1,36 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: What is Basemarket?
+description: Trade on prediction markets and profit from your knowledge
 ---
 
-## Setting up
+Basemarket is a peer-to-peer prediction market powered by Base that lets you trade shares based on future events. When you have insight into what’s likely to happen, you can profit by taking positions on those outcomes.
 
-Get your documentation site up and running in minutes.
+### How It Works
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+Basemarket operates as a decentralized exchange for event outcomes:
 
-## Make it yours
+- **Trade event outcomes** – Buy and sell shares in binary outcomes like "Will candidate X win the election?"
+- **Share pricing** – Each share trades between \$0.00 and \$1.00, and each pair of shares ("YES" and "NO") is fully collaterized by \$1.00 USDC.
+- **Settlement** – When an event resolves, winning shares pay out \$1.00.
+- **Peer-to-peer trading** – You trade directly with other users, not against a house.
+- **Exit anytime** – Close your position before the event resolves to realize gains or limit losses.
 
-Design a docs site that looks great and empowers your users.
+### Market Dynamics
 
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
-  </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
+Share prices reflect collective market sentiment about event probability. A share trading at $0.40 suggests the market estimates a 40% chance of that outcome occurring.
 
-## Create beautiful pages
+Prices move based on supply and demand from traders. As new information emerges, traders adjust their positions, and prices update to reflect the latest consensus probability.
 
-Everything you need to create world-class documentation.
+By aggregating collective insight, prediction markets act as truth-seeking systems that reveal a more accurate reflection of reality amid imperfect information.
 
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+### Trading Strategy
 
-## Need inspiration?
+Your profit comes from correctly anticipating outcomes:
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+- **Buy YES** when you think an event is more likely than the current price suggests.
+- **Buy NO** when you think an event is less likely than the current price indicates.
+- **Sell early** to lock in profits or cut losses before the event concludes.
+
+The spread between your entry and exit price, multiplied by your position size, determines your profit or loss.
+
+**Example:** You buy 100 YES shares on "Yankees to beat the Mets" at \$0.52 per share (\$52 total). In the first inning, the Yankees score 4 runs and the price jumps to \$0.72. You sell your position immediately for \$72, locking in a \$20 profit without waiting for the game to finish.

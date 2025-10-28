@@ -1,0 +1,46 @@
+---
+title: Market Types
+description: Understanding Simple and Linked markets on Basemarket
+---
+
+Basemarket offers two types of prediction markets: Simple markets and Linked markets.
+
+### Simple Markets
+
+Simple markets are binary YES/NO markets with two possible outcomes.
+
+**Example:** "Will Bitcoin reach \$150,000 by December 31, 2025?"
+
+- YES shares pay \$1.00 if Bitcoin reaches \$150,000
+- NO shares pay \$1.00 if Bitcoin doesn't reach \$150,000
+- YES price + NO price = \$1.00
+
+### Linked Markets
+
+Linked markets (also called multi-outcome markets) connect multiple mutually exclusive binary markets where one and only one outcome can be true.
+
+**Example:** Presidential election with candidates A, B, and C
+
+- Each candidate has a separate YES/NO market
+- Only one candidate can win
+- The markets are linked because they're mutually exclusive
+
+#### Placeholder Outcomes
+
+Linked markets may include placeholder outcomes for potential candidates or options that haven't been finalized yet. These placeholders can be updated with specific names once confirmed.
+
+#### The "Other" Outcome
+
+Linked markets include an explicit "Other" outcome to ensure all possibilities are covered. This outcome is not meant to be actively traded and serves as a catch-all for any result not covered by the main options.
+
+#### Inverse Risk
+
+In linked markets, holding NO positions across multiple outcomes can be converted to YES positions plus USDC because of mathematical equivalence.
+
+**Example:** Consider a position of 1 NO A and 1 NO B:
+
+- If A wins: position worth 1 USDC (NO A pays nothing, NO B pays $1.00)
+- If B wins: position worth 1 USDC (NO A pays $1.00, NO B pays nothing)
+- If C wins: position worth 2 USDC (both NO tokens pay $1.00 each)
+
+This position is equivalent to 1 USDC + 1 YES C, as both positions have identical value in all scenarios. Basemarket's infrastructure allows these NO positions to be converted to their equivalent YES positions plus USDC, enabling more efficient trading.

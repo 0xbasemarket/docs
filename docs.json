@@ -1,122 +1,109 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Basemarket Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#144EE1",
+    "light": "#4A7AFF",
+    "dark": "#0D3BB8"
+  },
+  "appearance": {
+    "default": "dark",
+    "strict": false
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Users",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
+            "pages": ["index", "users/signing-up", "users/making-your-first-prediction"]
+          },
+          {
+            "group": "Account Management",
+            "pages": ["users/deposits", "users/withdrawals", "users/portfolio"]
+          },
+          {
+            "group": "Markets",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "users/market-creation",
+              "users/market-types",
+              "users/market-resolution",
+              "users/market-dispute"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Trading",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "users/trading",
+              "users/order-book",
+              "users/market-orders",
+              "users/limit-orders",
+              "users/trading-fees"
             ]
           },
           {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
+            "group": "Rewards",
+            "pages": ["users/points", "users/leaderboard"]
           },
           {
-            "group": "AI tools",
+            "group": "FAQs",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "users/what-is-a-prediction-market",
+              "users/can-i-cash-out-early",
+              "users/trading-limits",
+              "users/does-basemarket-have-a-token",
+              "users/does-basemarket-have-an-api"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
+        "tab": "Developers",
+        "pages": ["developers/quickstart"]
       }
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Basemarket",
+          "href": "https://basemarket.com",
+          "icon": "house"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Terms of Service",
+          "href": "https://www.basemarket.com/tos",
+          "icon": "file-contract"
+        },
+        {
+          "anchor": "Privacy Policy",
+          "href": "https://www.basemarket.com/privacy",
+          "icon": "shield-halved"
+        },
+        {
+          "anchor": "Basemarket on X",
+          "href": "https://x.com/PredictOnBase",
+          "icon": "x-twitter"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/basemarket-logo-text-light.svg",
+    "dark": "/logo/basemarket-logo-text-dark.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Go to site",
+      "href": "https://basemarket.com"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/PredictOnBase"
     }
   }
 }

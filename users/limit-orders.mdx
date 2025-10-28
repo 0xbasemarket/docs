@@ -1,0 +1,106 @@
+---
+title: Limit Orders
+description: Trade at your desired price with limit orders
+---
+
+Limit orders give you precise control over your execution price. Unlike [market orders](/users/market-orders) that execute immediately, limit orders only fill when the market reaches your specified price or better.
+
+### What is a Limit Order?
+
+A limit order is an instruction to buy or sell a specific number of shares at your desired price or better. The order sits in the [order book](/users/order-book) until it fills, you cancel it, or the market closes.
+
+**Key characteristics:**
+
+- **Price control** - You set the exact price you're willing to trade at.
+- **Share-based** - You specify the number of shares you want.
+- **Patient execution** - Only fills when your price is reached.
+- **Can partially fill** - May execute in parts as liquidity becomes available.
+
+### How It Works
+
+<img
+  src="/images/limit-order.png"
+  alt="Limit Order Interface"
+  style={{ maxWidth: "400px", width: "100%" }}
+/>
+
+When you place a limit order:
+
+1. **Choose your side** - Select YES or NO
+2. **Set your limit price** - Specify the worst price you're willing to accept (e.g., 18¢). If better prices are available, you'll get those instead.
+3. **Enter share quantity** - Specify how many shares you want (e.g., 500).
+4. **Review matching liquidity** - See how many shares are available at or better than your price (e.g., "400.00 matching").
+5. **Confirm** - Click "Buy Yes" or "Buy No" to place the order in the order book.
+
+Your order will only execute when someone is willing to trade at your price (or better). It may fill immediately if there's matching liquidity, partially fill over time, or sit unfilled until your price is reached.
+
+### Order Matching
+
+**Immediate Fill**
+If there are existing orders at your limit price (or better), your order fills immediately against them.
+
+**Partial Fill**
+If only some shares are available at your price, part of your order fills and the rest remains in the order book.
+
+**Example:**
+You place a limit buy order for 500 shares at 18¢. The order book shows:
+
+```
+Sell Orders (Asks):
+17¢ - 200 shares
+18¢ - 150 shares
+19¢ - 300 shares
+```
+
+Result:
+
+- 200 shares fill immediately at 17¢ (better price!).
+- 150 shares fill immediately at 18¢.
+- Remaining 150 shares sit in order book at 18¢, waiting for a seller.
+
+### Managing Your Orders
+
+**Viewing Orders**
+
+- Check the market page below the order book.
+- View all orders in your portfolio under the "Orders" tab.
+
+**Cancelling Orders**
+
+- Click the cancel button next to any unfilled order.
+- Unfilled shares return to your available balance immediately.
+- No fees for cancelling.
+
+<Info>
+  **Partial fills are normal**: Each fill is a separate trade at your limit
+  price or better. Your remaining unfilled shares continue waiting in the order
+  book.
+</Info>
+
+## When to Use Limit Orders
+
+**Use limit orders when:**
+
+- You want a specific price or better.
+- The spread is wide (>5¢).
+- You're not in a rush to trade.
+- You're trading larger amounts and want price certainty.
+
+**Avoid limit orders when:**
+
+- You need immediate execution.
+- The spread is tight and you're likely to get filled anyway.
+- Missing the trade is worse than paying a slightly higher price.
+- Breaking news requires instant action (use [market orders](/users/market-orders) instead).
+
+## Limit Order vs Market Order
+
+| Feature       | Limit Order                      | Market Order           |
+| :------------ | :------------------------------- | :--------------------- |
+| **Execution** | When your price is reached       | Immediate              |
+| **Input**     | Share quantity at specific price | Dollar amount          |
+| **Price**     | Your specified price or better   | Current best (average) |
+| **Certainty** | Fill not guaranteed              | Guaranteed fill        |
+| **Best For**  | Better prices                    | Speed                  |
+
+Learn more about [Market Orders](/users/market-orders).

@@ -1,0 +1,102 @@
+---
+title: Trading Fees
+description: Understand Basemarket's maker and taker fee structure
+---
+
+Basemarket uses a maker-taker fee model to encourage liquidity in the order book.
+
+### Maker vs Taker Fees
+
+**Maker**
+A maker is a trader who adds liquidity to the [order book](/users/order-book) by placing a [limit order](/users/limit-orders) that doesn't immediately match with an existing order. Makers typically pay **0% fees**.
+
+**Taker**
+A taker is a trader who removes liquidity from the order book by placing an order that immediately matches with an existing order. This includes [market orders](/users/market-orders) and limit orders that cross the spread. Takers may incur fees that scale with market certainty.
+
+<Info>
+  **Fees are often zero**: Many markets on Basemarket have 0% fees for both
+  makers and takers. When fees do apply, they're shown upfront on the trading
+  ticket.
+</Info>
+
+### How Taker Fees Scale
+
+When a market has taker fees, the actual fee depends on the current market price and whether you're buying or selling.
+
+**Fee Structure**
+
+- Markets have a base fee rate (e.g., 100 basis points = 1%).
+- Your actual fee scales based on the market price.
+
+#### Example: 1% Base Fee
+
+| Market Price | Buy: % of Spend | Sell: % of Proceeds |
+| :----------- | :-------------- | :------------------ |
+| 10¢          | 1.00%           | 0.10%               |
+| 20¢          | 1.00%           | 0.20%               |
+| 50¢          | 1.00%           | 0.50%               |
+| 80¢          | 0.25%           | 0.20%               |
+| 90¢          | 0.11%           | 0.10%               |
+
+**Buying Fees**
+
+- At prices ≤ 50¢: You pay the full base rate (e.g., 1%).
+- At prices > 50¢: Fees decrease as the outcome becomes more certain.
+- Lowest fees when buying near 100¢ (outcome nearly decided).
+
+**Selling Fees**
+
+- Peak at 50¢ (maximum uncertainty).
+- Decrease symmetrically toward both 0¢ and 100¢.
+- Lowest fees when selling near the extremes (outcome nearly decided).
+
+### How Fees Are Paid
+
+**Buy Orders**
+
+- Fees are deducted from the shares you receive.
+- You receive slightly fewer shares than the order size.
+
+**Sell Orders**
+
+- Fees are deducted from the USDC you receive.
+- You receive slightly less USDC than the value of the shares.
+
+#### Example: Buying at 20¢
+
+```
+Market: 1% base fee, price = 20¢
+Order: Buy $100 worth of YES shares
+
+Without fees: 500 shares
+Fee: 1% × 100 = \$1 in value ≈ 5 shares
+Net result: ~495 shares
+```
+
+### Multiple Price Levels
+
+If your order fills at multiple prices (common with [market orders](/users/market-orders)), each portion is charged at its own price level. The final fee is the sum across all fills.
+
+The trading ticket shows an estimated fee before you confirm. The actual fee is calculated based on your final fill prices.
+
+### Fee Transparency
+
+All fees are shown on the trading ticket before you place any order:
+
+1. Base fee rate for the market.
+2. Estimated final fee based on your order.
+3. Net shares or proceeds after fees.
+
+**No fill, no fee**: orders that don't execute don't incur any fees.
+
+### Fee Strategy
+
+**Want to minimize fees?**
+
+- Use [limit orders](/users/limit-orders) that sit in the order book (makers typically pay 0%).
+- Avoid trading at 50% where uncertainty and fees are highest.
+
+**Need immediate execution?**
+
+- [Market orders](/users/market-orders) execute instantly but incur taker fees.
+- The fee is shown before you confirm.

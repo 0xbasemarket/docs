@@ -1,0 +1,92 @@
+---
+title: Market Orders
+description: Execute trades instantly at the best available price
+---
+
+Market orders are the fastest way to trade on Basemarket. They execute immediately at the current best available price.
+
+### What is a Market Order?
+
+A market order is an instruction to buy or sell shares instantly at the best price currently available in the [order book](/users/order-book).
+
+**Key characteristics:**
+
+- **Instant execution** - Trades happen immediately.
+- **Dollar-based** - You specify how much USD you want to spend.
+- **Average price** - Your order may fill at multiple prices to complete the full amount.
+- **No cancellation** - Cannot be cancelled once placed.
+
+### How It Works
+
+<img
+  src="/images/market-order.png"
+  alt="Market Order Interface"
+  style={{ maxWidth: "400px", width: "100%" }}
+/>
+
+When you place a market order:
+
+1. **Choose your side** - Select YES or NO.
+2. **Enter amount** - Specify how much USD you want to spend (e.g., \$100).
+3. **Review execution** - See your estimated "To Win" amount.
+4. **Confirm** - Click "Buy Yes" or "Buy No" to execute immediately.
+
+Your order matches with the best available [limit orders](/users/limit-orders) in the order book, filling at progressively worse prices until your full dollar amount is spent.
+
+### Price Impact & Average Price
+
+**Price Impact** occurs when your order size exceeds the available liquidity at the best price, forcing your order to fill at multiple price levels.
+
+**Example:**
+You place a market order to buy \$100 worth of YES shares. The order book shows:
+
+```
+Sell Orders (Asks):
+17¢ - 200 shares ($34 available).
+18¢ - 300 shares ($54 available).
+19¢ - 400 shares ($76 available).
+```
+
+Your $100 order will:
+
+- Buy ~200 shares at 17¢ ($34).
+- Buy ~300 shares at 18¢ ($54).
+- Buy ~63 shares at 19¢ ($12).
+- **Total**: ~563 shares for \$100.
+- **Average price**: ~17.8¢ per share.
+
+The larger your order relative to available liquidity, the more price impact you'll experience.
+
+<Warning>
+  **Check liquidity first**: In thin markets, large market orders can experience
+  significant slippage (worse average price). Always check the [order
+  book](/users/order-book) depth before placing large orders.
+</Warning>
+
+### When to Use Market Orders
+
+**Use market orders when:**
+
+- You want to trade immediately.
+- The spread is tight (1-2¢).
+- You're trading smaller amounts.
+- Speed matters more than getting a specific price.
+
+**Avoid market orders when:**
+
+- The spread is wide (>5¢).
+- The market has low liquidity.
+- You're trading large amounts relative to order book depth.
+- You want to wait for a better price (use [limit orders](/users/limit-orders) instead).
+
+### Market Order vs Limit Order
+
+| Feature       | Market Order           | Limit Order                      |
+| :------------ | :--------------------- | :------------------------------- |
+| **Execution** | Immediate              | When your price is reached       |
+| **Input**     | Dollar amount          | Share quantity at specific price |
+| **Price**     | Current best (average) | Your specified price or better   |
+| **Certainty** | Guaranteed fill        | Fill not guaranteed              |
+| **Best For**  | Speed                  | Better prices                    |
+
+Learn more about [Limit Orders](/users/limit-orders).

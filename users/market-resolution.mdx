@@ -1,0 +1,84 @@
+---
+title: Market Resolution
+description: How prediction markets are resolved on Basemarket
+---
+
+Market resolution is the process of finalizing a market's outcome once the real-world event concludes. On Basemarket, market resolution is powered by [UMA Optimistic Oracle](https://uma.xyz/), a decentralized smart-contract based protocol.
+
+### How Resolution Works
+
+Markets are resolved according to pre-defined rules specified before trading begins. You can find these rules in the market details.
+
+When a market resolves:
+
+- Winning shares are redeemable for \$1.00 each.
+- Losing shares become worthless.
+- Trading is no longer possible.
+
+### Resolution Process
+
+1. **Event Occurs** - The real-world event happens or the deadline passes.
+2. **Outcome Verified** - The result is verified against the market's resolution source.
+3. **Outcome Proposed** - A proposer proposes the outcome, placing a bond that will be forfeited should the proposal be incorrect.
+4. **Challenge Window Begins** - A timed challenge window begins (typically 2 hours, however, can be as short as a few minutes), under which the proposed outcome can be disputed.
+5. **Market Resolved** - If no dispute occurs, the market is officially finalized to the correct outcome.
+6. **Shares Settled** - Winning positions become redeemable.
+
+<Info>
+  **Timeline:** Certain markets may resolve within minutes of their conclusion.
+  A majority of markets are resolved within 24 hours after the conclusion of the
+  event.
+</Info>
+
+### Resolution Sources
+
+Each market specifies an objective source used to determine the outcome. Common sources include:
+
+- **Official Data** - Government agencies, regulatory bodies.
+- **Major News Outlets** - Associated Press, Reuters, Bloomberg, BBC.
+- **Sports Statistics** - ESPN, official league websites.
+- **Blockchain Data** - On-chain data from block explorers.
+- **Financial Data** - Stock exchanges (eg. NYSE, Nasdaq), Crypto exchanges (eg. Coinbase, Binance, Hyperliquid).
+
+#### Example Resolution Criteria
+
+**Bitcoin Price Market:**
+
+- Source: Coinbase.
+- Resolves YES if spot BTC ≥ $150,000 at 11:59:00 PM ET on Coinbase Exchange on December 31, 2025.
+
+**Election Market:**
+
+- Source: Associated Press official race call.
+- Resolves to the candidate declared winner by AP.
+
+**Sports Market:**
+
+- Source: ESPN official box score.
+- Resolves YES if Lakers score > Warriors score (including overtime).
+
+### Invalid Resolutions
+
+In rare cases, a market may resolve as invalid (N/A) if:
+
+- The event is cancelled with no alternative specified.
+- The resolution source is permanently unavailable.
+- The outcome is genuinely indeterminate per market rules.
+
+<Warning>
+  **Rare Occurrence:** Invalid resolutions are extremely rare because markets
+  are designed with clear, objective criteria.
+</Warning>
+
+### Disputing Resolutions
+
+If you believe a market was resolved incorrectly, you can submit a dispute. See [Market Dispute](/users/market-dispute) for details on the dispute process.
+
+### Before Trading
+
+Always review a market's resolution criteria before trading:
+
+- Understand how the outcome will be determined.
+- Verify the resolution source is reliable and objective.
+- Check for any special conditions or edge cases.
+- Ensure you agree with the specified criteria.

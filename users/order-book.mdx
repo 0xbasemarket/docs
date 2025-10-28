@@ -1,0 +1,191 @@
+---
+title: Order Book
+description: Understanding the order book and how to use it for better trading
+---
+
+The order book is one of the most important tools for traders on Basemarket. It shows all available buy and sell orders, helping you understand market depth, find the best prices, and make informed trading decisions.
+
+### What is an Order Book?
+
+An order book is a real-time list of all active [limit orders](/users/limit-orders) in a market. It displays:
+
+- **Buy orders**: Traders willing to buy YES shares (or sell NO shares).
+- **Sell orders**: Traders willing to sell YES shares (or buy NO shares).
+- **Price levels**: The specific prices where orders are placed.
+- **Order size**: The quantity of shares available at each price.
+
+### Order Book Layout
+
+![Order Book Example](/images/orderbook.png)
+
+The order book is divided into two sections:
+
+**Asks (Upper Section - Red)**
+
+- Shows orders to sell shares (traders wanting to exit positions).
+- Prices are sorted from lowest (best ask) at the bottom to highest at the top.
+- In the example: Sellers are offering shares from 17¢ up to 20¢.
+- Total shows the cumulative \$ amount of shares available up to and including that price level.
+
+**Bids (Lower Section - Green)**
+
+- Shows orders to buy shares (traders wanting to enter positions).
+- Prices are sorted from highest (best bid) at the top to lowest at the bottom.
+- In the example: Buyers are bidding from 16¢ down to 13¢.
+- Total shows the cumulative \$ amount of shares desired up to and including that price level.
+
+**Spread**
+
+- The middle shows the spread (difference between best bid and best ask).
+- In the example: 1¢ spread (17¢ ask - 16¢ bid).
+
+**Switching Between YES and NO**
+
+At the top of the order book, you can toggle between "Trade Yes" and "Trade No" tabs to view the order book for either side of the market. The structure remains the same - Asks on top, Bids on bottom - but the orders shown will be for the selected outcome.
+
+#### Reading Each Row
+
+Each row displays:
+
+- **Price**: The price per share (e.g., 17¢).
+- **Shares**: Number of shares available at that price (e.g., 200.00).
+- **Total**: Cumulative dollar value at that level (e.g., \$34.00).
+
+### Understanding the Spread
+
+The **spread** is the difference between the best buy price (highest bid) and the best sell price (lowest ask).
+
+**Example:**
+
+- Best Buy: 0.64 (highest someone will pay).
+- Best Sell: 0.66 (lowest someone will accept).
+- **Spread**: 0.02 (2¢).
+
+<Info>
+  **Tighter spreads** (smaller difference) indicate a more liquid market with
+  better prices. **Wider spreads** suggest less liquidity and potentially higher
+  trading costs.
+</Info>
+
+### How to Use the Order Book
+
+#### 1. Finding the Best Price
+
+The top of each side shows the best available prices:
+
+- **Top of Buy Side**: Highest price you can sell at immediately.
+- **Top of Sell Side**: Lowest price you can buy at immediately.
+
+#### 2. Assessing Market Depth
+
+Look at the total volume on each side:
+
+- **Deep book**: Many orders at various price levels = easy to trade large amounts.
+- **Thin book**: Few orders = harder to execute large trades without moving the price.
+
+#### 3. Identifying Support and Resistance
+
+Large orders at specific prices can act as:
+
+- **Support**: Big buy orders that might prevent prices from falling.
+- **Resistance**: Big sell orders that might prevent prices from rising.
+
+#### 4. Choosing Your Order Type
+
+Based on the order book:
+
+**Use a [Market Order](/users/market-orders) when:**
+
+- The spread is tight.
+- There's enough liquidity at the best price.
+- You want to trade immediately.
+
+**Use a [Limit Order](/users/limit-orders) when:**
+
+- The spread is wide.
+- You want a better price than currently available.
+- You're willing to wait for your desired price (although bear in mind such price may never become available).
+
+### Order Book Examples
+
+#### Example 1: Liquid Market
+
+```
+BUY (Bids)              |  SELL (Asks)
+Price  Shares  Total    |  Price  Shares  Total
+0.64   500     500      |  0.66   450     450
+0.63   800     1,300    |  0.67   600     1,050
+0.62   1,200   2,500    |  0.68   900     1,950
+```
+
+**Analysis:**
+
+- Spread: 2¢ (0.66 - 0.64).
+- Good liquidity on both sides.
+- Can easily execute trades up to 500 shares without much price impact.
+
+#### Example 2: Thin Market
+
+```
+BUY (Bids)              |  SELL (Asks)
+Price  Shares  Total    |  Price  Shares  Total
+0.45   50      50       |  0.55   75      75
+0.40   100     150      |  0.60   120     195
+0.35   80      230      |  0.65   200     395
+```
+
+**Analysis:**
+
+- Spread: 10¢ (0.55 - 0.45).
+- Low liquidity - only 50-75 shares at best prices.
+- Large orders will significantly impact the price.
+
+### Order Book Dynamics
+
+The order book is constantly changing as:
+
+#### Orders Get Added
+
+New limit orders appear in the book at various price levels.
+
+#### Orders Get Filled
+
+When a [market order](/users/market-orders) matches with a limit order, both are removed from the book.
+
+#### Orders Get Cancelled
+
+Traders can cancel their limit orders, removing them from the book.
+
+#### Prices Update
+
+As trades occur and new information emerges, traders adjust their orders.
+
+### Order Book Priority
+
+Orders are matched using **price-time priority**:
+
+**Price Priority**
+
+- Better-priced orders are always filled first.
+- For buy orders: higher prices have priority.
+- For sell orders: lower prices have priority.
+
+**Time Priority (FIFO)**
+
+- Among orders at the same price level, earlier orders are filled first.
+- This follows "First In, First Out" (FIFO) ordering.
+- If you place a limit order at 50¢ and someone else places another at 50¢ after you, your order gets filled first when a matching trade occurs.
+
+**Example:**
+If three traders place sell orders at 60¢ (in this order):
+
+1. Trader A: 100 shares at 60¢ (placed first).
+2. Trader B: 200 shares at 60¢ (placed second).
+3. Trader C: 150 shares at 60¢ (placed third).
+
+When a buyer places a market order for 250 shares:
+
+- Trader A's entire 100 shares get filled first.
+- Trader B's 150 shares (out of 200) get filled next.
+- Trader B's remaining 50 shares stay in the order book.
+- Trader C's order remains unfilled until more buyers arrive.
