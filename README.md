@@ -139,7 +139,3 @@ For questions about Basemarket itself, reach out:
 - Website: [basemarket.com](https://basemarket.com)
 
 For documentation issues, please open an issue in this repository.
-
-## License
-
-See [LICENSE](LICENSE) for details.
